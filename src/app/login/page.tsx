@@ -18,7 +18,7 @@ export default function Profile() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState<UserProfile | null>(null); // ✅ Исправлено
+  const [user, setUser] = useState<UserProfile | null>(null); 
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -72,7 +72,7 @@ export default function Profile() {
             <Input.Password className="mb-4" placeholder="Пароль" value={password} onChange={(e) => setPassword(e.target.value)} />
             <div className="flex justify-between">
               <Button className="bg-gray-300" onClick={() => router.push("/register")}>Регистрация</Button>
-              <Button onClick={() => router.push("/login")} className="bg-black text-white">Вход</Button>
+              <Button onClick={() => router.push("/profile")} className="bg-black text-white">Вход</Button>
             </div>
           </>
         )}
