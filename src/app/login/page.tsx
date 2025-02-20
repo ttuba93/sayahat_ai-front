@@ -71,8 +71,8 @@ export default function Profile() {
             <Input className="mb-4" placeholder="Почта" value={email} onChange={(e) => setEmail(e.target.value)} />
             <Input.Password className="mb-4" placeholder="Пароль" value={password} onChange={(e) => setPassword(e.target.value)} />
             <div className="flex justify-between">
-              <Button className="bg-gray-300" onClick={() => router.push("/register")}>Регистрация</Button>
-              <Button onClick={() => router.push("/profile")} className="bg-black text-white">Вход</Button>
+              <Button className="bg-gray text-[#0A0F0C] px-4 py-2 rounded border-[#0A0F0C]" onClick={() => router.push("/register")}>Регистрация</Button>
+              <Button onClick={() => router.push("/profile")} className="bg-[#0A0F0C] px-4 py-2 rounded border-[#0A0F0C] text-white">Вход</Button>
             </div>
           </>
         )}
