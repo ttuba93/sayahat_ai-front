@@ -27,38 +27,31 @@ export interface RegisterData {
     }
   };
 
-// // Функция регистрации пользователя
-// export const registerUser = async (name: string, email: string, password: string): Promise<boolean> => {
-//   try {
-//     const response = await axios.post(`${API_URL}/register/`, {
-//       name,
-//       email,
-//       password,
-//     });
 
-//     return response.status === 201; // Регистрация успешна, если статус 201 (Created)
-//   } catch (error) {
-//     console.error('Registration error:', error);
-//     return false;
-//   }
-// };
-
-// Функция входа в систему
 export const login = async (email: string, password: string): Promise<boolean> => {
-  try {
-    const response = await axios.post(`${API_URL}/token/`, { email, password });
-    if (response.status === 200) {
-      const { access, refresh } = response.data;
-      localStorage.setItem('access', access);
-      localStorage.setItem('refresh', refresh);
-      return true;
+    try {
+      console.log("Попытка входа:", { email, password });
+  
+      // Если API требует username, замените email на username
+      const response = await axios.post(`${API_URL}/token/`, {
+        username: email, // Попробуйте заменить на `email`, если сервер ожидает email
+        password,
+      });
+  
+      console.log("Ответ сервера на вход:", response.data);
+  
+      if (response.status === 200) {
+        const { access, refresh } = response.data;
+        localStorage.setItem("access", access);
+        localStorage.setItem("refresh", refresh);
+        return true;
+      }
+      return false;
+    } catch (error: any) {
+      console.error("Ошибка авторизации:", error.response?.data || error.message);
+      return false;
     }
-    return false;
-  } catch (error) {
-    console.error('Authorization error:', error);
-    return false;
-  }
-};
+  };
 
 // Функция обновления токена
 export const refreshToken = async (): Promise<string | null> => {

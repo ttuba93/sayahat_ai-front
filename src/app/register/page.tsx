@@ -33,6 +33,7 @@ export default function Register() {
       await registerUser(form);
       alert("Регистрация успешна!");
       router.push("/");
+      router.push("/profile");
     } catch {
       alert("Ошибка регистрации");
     }
