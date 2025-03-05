@@ -1,20 +1,21 @@
 import React from "react";
 import { Card, Row, Col } from "antd";
-import { EnvironmentOutlined, CarOutlined, GlobalOutlined, AppstoreOutlined, TeamOutlined, LineChartOutlined } from "@ant-design/icons";
+import { EnvironmentOutlined, CarOutlined, GlobalOutlined, AppstoreOutlined, TeamOutlined, LineChartOutlined, CalendarOutlined } from "@ant-design/icons";
 import "tailwindcss/tailwind.css";
 
 const cardData = [
-  { title: "Карта города", description: "Сбор и анализ данных о городе для выявления проблем.", icon: <EnvironmentOutlined /> },
-  { title: "Мониторинг транспорта", description: "Мониторинг транспорта и транзакций.", icon: <CarOutlined /> },
-  { title: "Экология", description: "Мониторинг экологического состояния города.", icon: <GlobalOutlined /> },
-  { title: "Городские сервисы", description: "Оптимизация и автоматизация услуг для городской инфраструктуры.", icon: <AppstoreOutlined /> },
-  { title: "Социальная сфера", description: "Поддержка и развитие социальных услуг.", icon: <TeamOutlined /> },
-  { title: "Экономика", description: "Анализ экономических показателей.", icon: <LineChartOutlined /> }
+  { title: "Локации", description: "Карта с туристическими объектами и популярними местами для посещения.", icon: <EnvironmentOutlined /> },
+  { title: "Маршруты", description: "Популярные маршруты среди туристов в Алмате.", icon: <CarOutlined /> },
+  { title: "Мероприятия", description: "Актуальные мероприятия по городу.", icon: <CalendarOutlined /> },
+  // { title: "Экология", description: "Мониторинг экологического состояния города.", icon: <GlobalOutlined /> },
+  // { title: "Городские сервисы", description: "Оптимизация и автоматизация услуг для городской инфраструктуры.", icon: <AppstoreOutlined /> },
+  // { title: "Экономика", description: "Анализ экономических показателей.", icon: <LineChartOutlined /> }
 ];
 
 const ServicesCards = () => {
   return (
-    <div className="p-8 bg-black">
+    <div className="p-8 bg-white">
+      <h1 style={{ fontSize: "38px", fontWeight: "bold", marginBottom: "20px", textAlign: "center", color: "#0A0F0C" }}>Наши сервисы</h1>
       <Row gutter={[16, 16]} justify="center">
         {cardData.map((item, index) => (
           <Col xs={24} sm={12} md={8} key={index}>
