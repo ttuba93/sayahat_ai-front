@@ -7,9 +7,6 @@ const cardData = [
   { title: "Локации", description: "Карта с туристическими объектами и популярними местами для посещения.", icon: <EnvironmentOutlined /> },
   { title: "Маршруты", description: "Популярные маршруты среди туристов в Алмате.", icon: <CarOutlined /> },
   { title: "Мероприятия", description: "Актуальные мероприятия по городу.", icon: <CalendarOutlined /> },
-  // { title: "Экология", description: "Мониторинг экологического состояния города.", icon: <GlobalOutlined /> },
-  // { title: "Городские сервисы", description: "Оптимизация и автоматизация услуг для городской инфраструктуры.", icon: <AppstoreOutlined /> },
-  // { title: "Экономика", description: "Анализ экономических показателей.", icon: <LineChartOutlined /> }
 ];
 
 const ServicesCards = () => {
